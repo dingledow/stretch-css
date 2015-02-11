@@ -30,7 +30,7 @@ To use the grid, firstly create an HTML element with a class of ```.row```.  Wit
 
     <div class="col__md-6-12 col__sm-12-12">
       This is a column that takes up 6 out of 12 columns for devices ≥768px
-      wide.  For devices <768px, it takes up all 12 out of 12 columns.
+      wide.  For devices <768px it takes up all 12 out of 12 columns.
     </div>
 
   </div>
