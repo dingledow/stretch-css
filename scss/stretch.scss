@@ -1,0 +1,94 @@
+$gutter: 10px;
+$md-breakpoint: 768px;
+$sm-breakpoint: 480px;
+
+body{
+  margin: 0;
+}
+
+.wrap{
+  padding: 0 $gutter;
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+.row{
+  margin-left: -$gutter;
+  margin-right: -$gutter;
+  width: 100%;
+  //white-space: nowrap;
+  margin: 0 auto;
+}
+
+*[class*='col__'] {
+  padding: 0 $gutter;
+  display: inline-block;
+  box-sizing: border-box;
+  margin-right: -4px;
+  white-space: normal;
+  vertical-align: top;
+}
+
+@media (min-width: $md-breakpoint + 1px){
+  @for $i from 1 through 12 {
+    *[class*='sm-#{$i}-12']{
+      width: percentage($i/12);
+    }
+    *[class*='sm-push-#{$i}-12']{
+      margin-left: percentage($i/12);
+    }
+    *[class*='sm-pull-#{$i}-12']{
+      margin-left: -(percentage($i/12));
+    }
+  }
+  @for $i from 1 through 12 {
+    *[class*='md-#{$i}-12']{
+      width: percentage($i/12);
+    }
+    *[class*='md-push-#{$i}-12']{
+      margin-left: percentage($i/12);
+    }
+    *[class*='md-pull-#{$i}-12']{
+      margin-left: -(percentage($i/12));
+    }
+  }
+}
+
+@media (max-width: $md-breakpoint) and (min-width: $sm-breakpoint + 1px){
+  @for $i from 1 through 12 {
+    *[class*='md-#{$i}-12']{
+      width: percentage($i/12);
+    }
+    *[class*='md-push-#{$i}-12']{
+      margin-left: percentage($i/12);
+    }
+    *[class*='md-pull-#{$i}-12']{
+      margin-left: -(percentage($i/12));
+    }
+  }
+}
+
+@media (max-width: $sm-breakpoint){
+  @for $i from 1 through 12 {
+    *[class*='sm-#{$i}-12']{
+      width: percentage($i/12);
+    }
+    *[class*='sm-push-#{$i}-12']{
+      margin-left: percentage($i/12);
+    }
+    *[class*='sm-pull-#{$i}-12']{
+      margin-left: -(percentage($i/12));
+    }
+  }
+}
+
+
+/* ==========================================================================
+
+  DEMO STYLES
+
+  =========================================================================*/
+
+.test{
+  background-color: #f0f0f0;
+}
