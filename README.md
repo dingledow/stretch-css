@@ -6,7 +6,10 @@ I hope people find this helpful.
 
 ## Getting Started
 
-Stretch can be implemented in two ways: either use the `.scss` stylesheet in this repository compile it to CSS; or, link the `.css` file in your HTML document's head:
+Stretch can be implemented in two ways:
+
+1.  Use the `stretch.scss` stylesheet in this repository and compile it to CSS.  This is the best way to create a customised version of Stretch;
+2.  Or, link the `stretch.css` file in your HTML document's head:
 
 ```<link rel="stylesheet" href="css/stretch.css">```
 
