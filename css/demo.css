@@ -7,6 +7,21 @@ body {
   font-family: "europa",sans-serif;
 }
 
+.btn {
+  background-color: #4ec6ab;
+  color: white;
+  padding: .6em .8em;
+  border-radius: .16em;
+  box-sizing: border-box;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.btn-lg {
+  font-size: 1.3em;
+}
+
 .title {
   border-bottom: 1px solid #f0f0f0;
 }
@@ -15,24 +30,27 @@ body {
   margin: .5em 0 0;
 }
 
-p {
-  margin: .5em 0 1em;
+.btn-share {
+  display: inline-block;
+  margin: 0 0 1em;
+}
+
+.download__about {
+  text-align: center;
+}
+.download__about .btn {
+  margin: 20px auto 12px;
+}
+.download__about .version {
+  margin: 0;
+  color: #999;
+  font-size: .85em;
 }
 
 .block {
-  background-color: rgba(252, 65, 27, 0.15);
+  background-color: #ffdad6;
   min-height: 20px;
   width: 100%;
-}
-
-.btn-share {
-  float: right;
-  margin-left: 5px;
-}
-@media screen and (max-width: 600px) {
-  .btn-share {
-    display: block;
-  }
 }
 
 /*# sourceMappingURL=demo.css.map */

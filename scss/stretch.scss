@@ -1,6 +1,18 @@
 $gutter: 20px;
+$row-spacing: 20px;
 $md-breakpoint: 768px;
 $sm-breakpoint: 480px;
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
 
 body{
   margin: 0;
@@ -13,24 +25,19 @@ body{
 }
 
 .row{
-  width: calc(100% + #{$gutter});
-  -webkit-width: calc(100% + #{$gutter});
-  -moz-width: calc(100% + #{$gutter});
-  white-space: nowrap;
-  margin-top: 0;
-  margin-bottom: $gutter;
-  margin-left: ($gutter / -2);
+  margin-left:  ($gutter / -2);
   margin-right: ($gutter / -2);
-  display: table;
+  @include clearfix;
+  margin-bottom: $row-spacing;
 }
 
 *[class*='col__'] {
-  padding-left: ($gutter / 2);
+  position: relative;
+  min-height: 1px;
+  padding-left:  ($gutter / 2);
   padding-right: ($gutter / 2);
-  display: table-cell;
   box-sizing: border-box;
   float: left;
-  white-space: normal;
 }
 
 @for $i from 1 through 12 {
@@ -95,5 +102,47 @@ body{
     *[class*='sm-pull-#{$i}-12']{
       margin-left: -(percentage($i/12));
     }
+  }
+}
+
+.col__top {
+  vertical-align: top;
+}
+.col__middle {
+  vertical-align: middle;
+}
+.col__bottom {
+  vertical-align: bottom;
+}
+
+.row-full-height {
+  height: 100%;
+}
+
+.col__full-height {
+  height: 100%;
+  vertical-align: middle;
+}
+.row-same-height {
+  display: table;
+  width: 100%;
+  /* fix overflow */
+  table-layout: fixed;
+}
+.col__xs-height {
+  display: table-cell;
+  float: none !important;
+}
+
+@media (min-width: $sm-breakpoint) {
+  .col__sm-height {
+    display: table-cell;
+    float: none !important;
+  }
+}
+@media (min-width: $md-breakpoint) {
+  .col__md-height {
+    display: table-cell;
+    float: none !important;
   }
 }
