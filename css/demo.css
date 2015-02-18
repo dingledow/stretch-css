@@ -3,33 +3,36 @@
   These styles are just for the demo.
 
   =========================================================================*/
-
-body{
+body {
   font-family: "europa",sans-serif;
 }
 
-.title{
+.title {
   border-bottom: 1px solid #f0f0f0;
 }
 
-.title__heading1{
+.title__heading1 {
   margin: .5em 0 0;
 }
 
-p{
+p {
   margin: .5em 0 1em;
 }
 
-.block{
-  background-color: rgba(#fc411b, .15);
+.block {
+  background-color: rgba(252, 65, 27, 0.15);
   min-height: 20px;
   width: 100%;
 }
 
-.btn-share{
+.btn-share {
   float: right;
   margin-left: 5px;
-  @media screen and (max-width: 600px){
+}
+@media screen and (max-width: 600px) {
+  .btn-share {
     display: block;
   }
 }
+
+/*# sourceMappingURL=demo.css.map */

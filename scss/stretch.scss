@@ -1,4 +1,4 @@
-$gutter: 10px;
+$gutter: 20px;
 $md-breakpoint: 768px;
 $sm-breakpoint: 480px;
 
@@ -7,26 +7,42 @@ body{
 }
 
 .wrap{
-  padding: 0 $gutter;
+  padding: 0 ($gutter / 2);
   margin: 0 auto;
   max-width: 960px;
 }
 
 .row{
-  margin-left: -$gutter;
-  margin-right: -$gutter;
-  width: 100%;
-  //white-space: nowrap;
-  margin: 0 auto;
+  width: calc(100% + #{$gutter});
+  -webkit-width: calc(100% + #{$gutter});
+  -moz-width: calc(100% + #{$gutter});
+  white-space: nowrap;
+  margin-top: 0;
+  margin-bottom: $gutter;
+  margin-left: ($gutter / -2);
+  margin-right: ($gutter / -2);
+  display: table;
 }
 
 *[class*='col__'] {
-  padding: 0 $gutter;
-  display: inline-block;
+  padding-left: ($gutter / 2);
+  padding-right: ($gutter / 2);
+  display: table-cell;
   box-sizing: border-box;
-  margin-right: -4px;
+  float: left;
   white-space: normal;
-  vertical-align: top;
+}
+
+@for $i from 1 through 12 {
+  *[class*='#{$i}-12']{
+    width: percentage($i/12);
+  }
+  *[class*='push-#{$i}-12']{
+    margin-left: percentage($i/12);
+  }
+  *[class*='pull-#{$i}-12']{
+    margin-left: -(percentage($i/12));
+  }
 }
 
 @media (min-width: $md-breakpoint + 1px){
@@ -80,15 +96,4 @@ body{
       margin-left: -(percentage($i/12));
     }
   }
-}
-
-
-/* ==========================================================================
-
-  DEMO STYLES
-
-  =========================================================================*/
-
-.test{
-  background-color: #f0f0f0;
 }

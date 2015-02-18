@@ -8,7 +8,8 @@ module.exports = function(grunt) {
             sourcemap: false
           },
           files: {
-            'css/stretch.css': 'scss/stretch.scss'
+            'css/stretch.css': 'scss/stretch.scss',
+            'css/demo.css': 'scss/demo.scss',
           }
         },
         dev: {
