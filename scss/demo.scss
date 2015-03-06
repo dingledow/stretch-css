@@ -22,14 +22,33 @@ p{
 
 .block{
   background-color: rgba(#fc411b, .15);
-  min-height: 20px;
+  min-height: 24px;
   width: 100%;
+  overflow: hidden;
+  position: relative;
+  &:hover{
+    .col_class{
+      display: block;
+      top: 0px;
+    }
+  }
 }
 
 .btn-share{
   float: right;
   margin-left: 5px;
   @media screen and (max-width: 600px){
-    display: block;
+  display: block;
   }
+}
+
+.col_class{
+  width: 100%;
+  text-align: center;
+  color: rgba(#fc411b, .5);
+  font-size: 13px;
+  margin-top: 4px;
+  position: absolute;
+  top: 24px;
+  transition: top .5s cubic-bezier(0.84734, -0.39, 0.30734, 1.61);
 }
