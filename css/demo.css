@@ -14,6 +14,9 @@ body {
   font-family: "Apercu",sans-serif;
   background-color: #edf0f8;
   color: #162673;
+  line-height: 21px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .btn {
@@ -25,15 +28,31 @@ body {
   display: inline-block;
   text-decoration: none;
   text-transform: uppercase;
+  font-weight: 900;
 }
 
 .btn-lg {
   font-size: 1.3em;
 }
 
+code, pre {
+  font-family: "apercumono", monospace;
+  padding: 0px 3px;
+  background-color: #dbe4f4;
+  border-radius: 3px;
+  border: 1px solid #a4b8da;
+  box-sizing: border-box;
+}
+
+pre {
+  white-space: pre-wrap;
+  padding: 9px 12px;
+}
+
 .title {
   border-bottom: 1px solid #8c9bc8;
   position: relative;
+  margin-top: 24px;
 }
 
 .title__heading1 {
@@ -45,6 +64,13 @@ body {
   right: 0;
   bottom: 16px;
 }
+@media screen and (max-width: 600px) {
+  .btn-share-wrapper {
+    display: block;
+    position: relative;
+    margin-top: 36px;
+  }
+}
 
 .btn-share {
   display: inline-block;
@@ -53,14 +79,16 @@ body {
 @media screen and (max-width: 600px) {
   .btn-share {
     display: block;
+    margin-bottom: 3px;
   }
 }
 
 .download__about {
   text-align: center;
+  margin: 20px auto;
 }
 .download__about .btn {
-  margin: 20px auto 12px;
+  margin: 0 auto 12px;
 }
 .download__about .version {
   margin: 0;
@@ -69,10 +97,10 @@ body {
 }
 
 .block {
-  min-height: 36px;
+  min-height: 42px;
   background-color: rgba(252, 43, 96, 0.18);
   width: 100%;
-  overflow: auto;
+  overflow: hidden;
   position: relative;
   transition: background-color .3s linear;
 }
@@ -80,10 +108,10 @@ body {
   background-color: rgba(252, 43, 96, 0.24);
 }
 .block:hover .col_class {
-  top: 7px;
+  top: 6px;
 }
 .block:hover .col_class__1-of-12 {
-  top: 0;
+  top: -5px;
 }
 
 .col_class {
@@ -95,8 +123,28 @@ body {
   font-weight: 900;
   margin-top: 5px;
   position: absolute;
-  top: 30px;
+  top: 32px;
   transition: top 0.4s cubic-bezier(0.84734, -0.39, 0.30734, 1.61);
+}
+
+.getting_started__variable_list {
+  list-style: none;
+  padding: 0;
+}
+.getting_started__variable_list li {
+  margin: 6px 0;
+}
+
+.getting_started__html_block {
+  width: calc(200% + 20px);
+}
+
+.div-highlight {
+  color: #fc2b60;
+}
+
+.class-highlight {
+  color: #6e82be;
 }
 
 /*# sourceMappingURL=demo.css.map */

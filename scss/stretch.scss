@@ -1,4 +1,5 @@
 $gutter: 20px;
+$wrap: 960px;
 $row-spacing: 20px;
 $md-breakpoint: 768px;
 $sm-breakpoint: 480px;
@@ -21,7 +22,7 @@ body{
 .wrap{
   padding: 0 ($gutter / 2);
   margin: 0 auto;
-  max-width: 960px;
+  max-width: $wrap;
 }
 
 .row{
@@ -39,47 +40,51 @@ body{
   box-sizing: border-box;
   float: left;
   white-space: normal;
-  overflow: auto;
 }
 
-@for $i from 1 through 12 {
-  *[class*='#{$i}-12']{
-    width: percentage($i/12);
+@mixin make-grid-column-all-devices {
+  @for $i from 1 through 12 {
+    .col__#{$i}-12{
+      width: percentage($i/12);
+    }
+    .col__push-#{$i}-12{
+      margin-left: percentage($i/12);
+    }
+    .col__pull-#{$i}-12{
+      margin-left: -(percentage($i/12));
+    }
   }
-  *[class*='push-#{$i}-12']{
-    margin-left: percentage($i/12);
-  }
-  *[class*='pull-#{$i}-12']{
-    margin-left: -(percentage($i/12));
+}
+
+@mixin make-grid-column-center {
+  @for $i from 1 through 12 {
+    *[class*='__center']{
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      float: initial;
+    }
   }
 }
 
 @media (min-width: $md-breakpoint + 1px){
+  @include make-grid-column-all-devices;
   @for $i from 1 through 12 {
-    *[class*='sm-#{$i}-12']{
+    *[class*='lg-#{$i}-12']{
       width: percentage($i/12);
     }
-    *[class*='sm-push-#{$i}-12']{
+    *[class*='lg-push-#{$i}-12']{
       margin-left: percentage($i/12);
     }
-    *[class*='sm-pull-#{$i}-12']{
+    *[class*='lg-pull-#{$i}-12']{
       margin-left: -(percentage($i/12));
     }
   }
-  @for $i from 1 through 12 {
-    *[class*='md-#{$i}-12']{
-      width: percentage($i/12);
-    }
-    *[class*='md-push-#{$i}-12']{
-      margin-left: percentage($i/12);
-    }
-    *[class*='md-pull-#{$i}-12']{
-      margin-left: -(percentage($i/12));
-    }
-  }
+  @include make-grid-column-center;
 }
 
 @media (max-width: $md-breakpoint) and (min-width: $sm-breakpoint + 1px){
+  @include make-grid-column-all-devices;
   @for $i from 1 through 12 {
     *[class*='md-#{$i}-12']{
       width: percentage($i/12);
@@ -91,9 +96,11 @@ body{
       margin-left: -(percentage($i/12));
     }
   }
+  @include make-grid-column-center;
 }
 
 @media (max-width: $sm-breakpoint){
+  @include make-grid-column-all-devices;
   @for $i from 1 through 12 {
     *[class*='sm-#{$i}-12']{
       width: percentage($i/12);
@@ -105,46 +112,47 @@ body{
       margin-left: -(percentage($i/12));
     }
   }
+  @include make-grid-column-center;
 }
 
-.col__top {
-  vertical-align: top;
-}
-.col__middle {
-  vertical-align: middle;
-}
-.col__bottom {
-  vertical-align: bottom;
-}
+// .col__top {
+//   vertical-align: top;
+// }
+// .col__middle {
+//   vertical-align: middle;
+// }
+// .col__bottom {
+//   vertical-align: bottom;
+// }
+//
+// .row-full-height {
+//   height: 100%;
+// }
+//
+// .col__full-height {
+//   height: 100%;
+//   vertical-align: middle;
+// }
+// .row-same-height {
+//   display: table;
+//   width: 100%;
+//   /* fix overflow */
+//   table-layout: fixed;
+// }
+// .col__xs-height {
+//   display: table-cell;
+//   float: none !important;
+// }
 
-.row-full-height {
-  height: 100%;
-}
-
-.col__full-height {
-  height: 100%;
-  vertical-align: middle;
-}
-.row-same-height {
-  display: table;
-  width: 100%;
-  /* fix overflow */
-  table-layout: fixed;
-}
-.col__xs-height {
-  display: table-cell;
-  float: none !important;
-}
-
-@media (min-width: $sm-breakpoint) {
-  .col__sm-height {
-    display: table-cell;
-    float: none !important;
-  }
-}
-@media (min-width: $md-breakpoint) {
-  .col__md-height {
-    display: table-cell;
-    float: none !important;
-  }
-}
+// @media (min-width: $sm-breakpoint) {
+//   .col__sm-height {
+//     display: table-cell;
+//     float: none !important;
+//   }
+// }
+// @media (min-width: $md-breakpoint) {
+//   .col__md-height {
+//     display: table-cell;
+//     float: none !important;
+//   }
+// }

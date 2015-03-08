@@ -45,20 +45,78 @@
   </div>
 
   <div class="row">
-    <div class="row-same-height">
-      <div class="col__md-6-12 col__sm-12-12 col__sm-height">
-        <h2>About</h2>
-        <p>
-          Stretch is a 12 column grid that can have any gutter size you want.
-          Columns can be pushed and pulled to make manoeuvring content really
-          easy and two breakpoint sizes can be specified.
-        </p>
-        <p>1 Sass file. 3 variables. Lots of win.</p>
-      </div>
-      <div class="col__md-6-12 col__sm-12-12 col__sm-height col__middle download__about">
-        <a class="btn btn-lg" href="https://github.com/dingledow/stretch/archive/master.zip">Download</a>
-        <p class="version">v0.1.0 – 11KB</p>
-      </div>
+    <div class="col__lg-6-12__center col__12-12">
+      <h2>About</h2>
+      <p>
+        Stretch is a 12 column grid that can have any gutter size you want.
+        Columns can be pushed and pulled to make manoeuvring content really
+        easy. Two breakpoint sizes can be specified.
+      </p>
+      <p>
+        1 Sass file. 5 variables. Lots of win.
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col__12-12 col__middle download__about">
+      <a class="btn btn-lg" href="https://github.com/dingledow/stretch/archive/master.zip">Download</a>
+      <p class="version">v0.1.0 – 11KB</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col__lg-6-12__center col__12-12">
+      <h2>Getting Started</h2>
+      <h3>Sass Variables</h3>
+      <p>
+        The best way to use stretch is to include the <code>stretch.scss</code>
+        file in your Sass build. In this file, set the following variables to
+        whatever you want. These are the default values:
+        <ul class="getting_started__variable_list">
+          <li><code>$gutter: 20px;</code></li>
+          <li><code>$wrap: 960px;</code></li>
+          <li><code>$row-spacing: 20px;</code></li>
+          <li><code>$md-breakpoint: 768px;</code></li>
+          <li><code>$sm-breakpoint: 480px;</code></li>
+        </ul>
+      </p>
+      <h3>Build Your Grid</h3>
+      <h4>Wrap Your Content</h4>
+      <p>
+        Start by setting a <code>wrap</code> class on the element that will
+        contain all the rows of content. The width for this is set in the
+        <code>$wrap</code> Sass variable.
+      </p>
+      <h4>Add a Row</h4>
+
+      <!-- <pre class="getting_started__html_block">
+&lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;wrap&quot;&gt;
+  &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;row&quot;&gt;
+    &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;col__12-12&quot;&gt;
+      This is a column that takes up all 12 out of 12 columns no matter how wide the device is.
+    &lt;/<span class="div-highlight">div</span>&gt;
+
+    &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;col__6-12&quot;&gt;
+      This is a column that takes up 6 out of 12 columns no matter how wide the device is.
+    &lt;/<span class="div-highlight">div</span>&gt;
+
+    &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;col__md-6-12 col__sm-12-12&quot;&gt;
+      This is a column that takes up 6 out of 12 columns for devices wider than the $md-breakpoint.
+      For devices less than the 768px it takes up all 12 out of 12 columns.
+    &lt;/<span class="div-highlight">div</span>&gt;
+
+  &lt;/<span class="div-highlight">div</span>&gt;
+&lt;/<span class="div-highlight">div</span>&gt;</pre> -->
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col__6-12 col__sm-12-12">
+      <h2>Demo</h2>
+      <p>
+
+      </p>
     </div>
   </div>
 
@@ -173,7 +231,7 @@
     </div>
   </div>
 
-</div>
+</div><!-- End Wrap -->
 
 <!-- Place this tag right after the last button or just before your close body tag. -->
 <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
