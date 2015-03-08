@@ -57,13 +57,11 @@ body{
 }
 
 @mixin make-grid-column-center {
-  @for $i from 1 through 12 {
-    *[class*='__center']{
-      margin-left: auto;
-      margin-right: auto;
-      display: block;
-      float: initial;
-    }
+  *[class*='__center']{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    float: initial;
   }
 }
 
