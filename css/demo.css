@@ -3,12 +3,21 @@
   These styles are just for the demo.
 
   =========================================================================*/
+@font-face {
+  font-family: 'apercumono';
+  src: url("../fonts/apercu-mono/Apercu-Mono-webfont.eot");
+  src: url("../fonts/apercu-mono/Apercu-Mono-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/apercu-mono/Apercu-Mono-webfont.woff2") format("woff2"), url("../fonts/apercu-mono/Apercu-Mono-webfont.woff") format("woff"), url("../fonts/apercu-mono/Apercu-Mono-webfont.ttf") format("truetype"), url("../fonts/apercu-mono/Apercu-Mono-webfont.svg#apercumono") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
-  font-family: "europa",sans-serif;
+  font-family: "Apercu",sans-serif;
+  background-color: #edf0f8;
+  color: #162673;
 }
 
 .btn {
-  background-color: #4ec6ab;
+  background-color: #fc2b60;
   color: white;
   padding: .6em .8em;
   border-radius: .16em;
@@ -23,16 +32,28 @@ body {
 }
 
 .title {
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid #8c9bc8;
+  position: relative;
 }
 
 .title__heading1 {
   margin: .5em 0 0;
 }
 
+.btn-share-wrapper {
+  position: absolute;
+  right: 0;
+  bottom: 16px;
+}
+
 .btn-share {
   display: inline-block;
-  margin: 0 0 1em;
+  margin: 0;
+}
+@media screen and (max-width: 600px) {
+  .btn-share {
+    display: block;
+  }
 }
 
 .download__about {
@@ -43,14 +64,39 @@ body {
 }
 .download__about .version {
   margin: 0;
-  color: #999;
+  color: #8c9bc8;
   font-size: .85em;
 }
 
 .block {
-  background-color: #ffdad6;
-  min-height: 20px;
+  min-height: 36px;
+  background-color: rgba(252, 43, 96, 0.18);
   width: 100%;
+  overflow: auto;
+  position: relative;
+  transition: background-color .3s linear;
+}
+.block:hover {
+  background-color: rgba(252, 43, 96, 0.24);
+}
+.block:hover .col_class {
+  top: 7px;
+}
+.block:hover .col_class__1-of-12 {
+  top: 0;
+}
+
+.col_class {
+  font-family: "apercumono",sans-serif;
+  width: 100%;
+  text-align: center;
+  color: #fc2b60;
+  font-size: 11px;
+  font-weight: 900;
+  margin-top: 5px;
+  position: absolute;
+  top: 30px;
+  transition: top 0.4s cubic-bezier(0.84734, -0.39, 0.30734, 1.61);
 }
 
 /*# sourceMappingURL=demo.css.map */

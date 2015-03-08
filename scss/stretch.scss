@@ -38,6 +38,8 @@ body{
   padding-right: ($gutter / 2);
   box-sizing: border-box;
   float: left;
+  white-space: normal;
+  overflow: auto;
 }
 
 @for $i from 1 through 12 {
