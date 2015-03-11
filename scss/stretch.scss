@@ -1,5 +1,5 @@
-$gutter: 20px;
 $wrap: 960px;
+$gutter: 20px;
 $row-spacing: 20px;
 $md-breakpoint: 768px;
 $sm-breakpoint: 480px;
@@ -44,16 +44,17 @@ body{
 
 @mixin make-grid-column-all-devices {
   @for $i from 1 through 12 {
-    .col__#{$i}-12{
+    *[class*='col__#{$i}-12']{
       width: percentage($i/12);
     }
-    .col__push-#{$i}-12{
+    *[class*='col__push-#{$i}-12']{
       margin-left: percentage($i/12);
     }
-    .col__pull-#{$i}-12{
+    *[class*='col__pull-#{$i}-12']{
       margin-left: -(percentage($i/12));
     }
   }
+  @include make-grid-column-center;
 }
 
 @mixin make-grid-column-center {

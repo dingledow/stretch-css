@@ -74,59 +74,94 @@
         file in your Sass build. In this file, set the following variables to
         whatever you want. These are the default values:
         <ul class="getting_started__variable_list">
-          <li><code>$gutter: 20px;</code></li>
           <li><code>$wrap: 960px;</code></li>
+          <li><code>$gutter: 20px;</code></li>
           <li><code>$row-spacing: 20px;</code></li>
           <li><code>$md-breakpoint: 768px;</code></li>
           <li><code>$sm-breakpoint: 480px;</code></li>
         </ul>
       </p>
-      <h3>Build Your Grid</h3>
+      <h3>Prepare Your Grid</h3>
       <h4>Wrap Your Content</h4>
       <p>
         Start by setting a <code>wrap</code> class on the element that will
         contain all the rows of content. The width for this is set in the
         <code>$wrap</code> Sass variable.
       </p>
-      <h4>Add a Row</h4>
-
-      <!-- <pre class="getting_started__html_block">
+      <p>
+        If you want a full-width grid, then just set <code>$wrap</code> to
+        <code>100%</code>.
+      </p>
+      <h4>Add Rows</h4>
+      <p>
+        Add a row within the wrap element by setting a <code>row</code> class
+        to the element that will contain the columns for that row.
+      </p>
+      <p>
+        You can specify the vertical spacing between rows by setting the
+        <code>$row-spacing</code> variable to what you prefer.
+      </p>
+      <h4>Define the Gutter</h4>
+      <p>
+        The default gutter width is <code>20px</code>, but this can be
+        changed to whatever you would like in the <code>$gutter</code>
+        variable.
+      </p>
+      <h3>Create Your Columns</h3>
+      <p>
+        So far, your grid structure will look something like this:
+      </p>
+<pre>
 &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;wrap&quot;&gt;
   &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;row&quot;&gt;
-    &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;col__12-12&quot;&gt;
-      This is a column that takes up all 12 out of 12 columns no matter how wide the device is.
-    &lt;/<span class="div-highlight">div</span>&gt;
-
-    &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;col__6-12&quot;&gt;
-      This is a column that takes up 6 out of 12 columns no matter how wide the device is.
-    &lt;/<span class="div-highlight">div</span>&gt;
-
-    &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;col__md-6-12 col__sm-12-12&quot;&gt;
-      This is a column that takes up 6 out of 12 columns for devices wider than the $md-breakpoint.
-      For devices less than the 768px it takes up all 12 out of 12 columns.
-    &lt;/<span class="div-highlight">div</span>&gt;
-
+    <span class="comment-highlight">&lt;!-- Add columns here --&gt;</span>
   &lt;/<span class="div-highlight">div</span>&gt;
-&lt;/<span class="div-highlight">div</span>&gt;</pre> -->
-    </div>
-  </div>
+&lt;/<span class="div-highlight">div</span>&gt;</pre>
 
-  <div class="row">
-    <div class="col__6-12 col__sm-12-12">
-      <h2>Demo</h2>
+      <h4>Simple Columns</h4>
       <p>
+        The quickest way to setup columns is to create ones that don't respond
+        to specific breakpoints (see Responsive Columns). This simple column
+        structure will
+      </p>
+      <p>
+        Stretch CSS is based on a 12 column grid. To define a column, create a
+        class on the element like this:
+      </p>
+<pre>
+&lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;wrap&quot;&gt;
+  &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;row&quot;&gt;
+    &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;col__x-12&quot;&gt;
+      <span class="comment-highlight">&lt;!-- Content goes here --&gt;</span>
+    &lt;/<span class="div-highlight">div</span>&gt;
+  &lt;/<span class="div-highlight">div</span>&gt;
+&lt;/<span class="div-highlight">div</span>&gt;</pre>
+      <p>
+        Change the value of <code>x</code> to be the number of columns wide
+        the element should be.
+      </p>
 
+      <h4>Simple Columns – Demo</h4>
+      <p>
+        The demo below shows how different combinations of column widths
+        can be used to create a grid system with Stretch CSS.
+      </p>
+
+      <p>
+        Hover over each block to see the class name used.
       </p>
     </div>
   </div>
+</div>
 
-  <div class="row">
+<div class="wrap demo">
+  <div class="row demo">
     <div class="col__12-12">
       <div class="block"><div class="col_class">.col__12-12</div></div>
     </div>
   </div>
 
-  <div class="row">
+  <div class="row demo">
     <div class="col__6-12">
       <div class="block"><div class="col_class">.col__6-12</div></div>
     </div>
@@ -135,7 +170,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row demo">
     <div class="col__3-12">
       <div class="block"><div class="col_class">.col__3-12</div></div>
     </div>
@@ -150,7 +185,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row demo">
     <div class="col__4-12">
       <div class="block"><div class="col_class">.col__4-12</div></div>
     </div>
@@ -159,7 +194,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row demo">
     <div class="col__2-12">
       <div class="block"><div class="col_class">.col__2-12</div></div>
     </div>
@@ -180,7 +215,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row demo">
     <div class="col__5-12">
       <div class="block"><div class="col_class">.col__5-12</div></div>
     </div>
@@ -192,7 +227,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row demo">
     <div class="col__1-12">
       <div class="block"><div class="col_class col_class__1-of-12">.col__  1-12</div></div>
     </div>
@@ -228,6 +263,71 @@
     </div>
     <div class="col__1-12">
       <div class="block"><div class="col_class col_class__1-of-12">.col__ 1-12</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="row">
+    <div class="col__lg-6-12__center col__12-12">
+      <h4>Centering Columns</h4>
+      <p>
+        Centering a single column in the grid is really simple. Create a new row
+        and add <code>__center</code> on to the end of the class that defines
+        the column's width.
+      </p>
+<pre>
+&lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;wrap&quot;&gt;
+  &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;row&quot;&gt;
+    &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;col__6-12__center&quot;&gt;
+      <span class="comment-highlight">&lt;!-- This column will be 6 out of 12 columns wide and positioned centrally. --&gt;</span>
+    &lt;/<span class="div-highlight">div</span>&gt;
+  &lt;/<span class="div-highlight">div</span>&gt;
+&lt;/<span class="div-highlight">div</span>&gt;</pre>
+
+      <h4>Centering Columns Demo</h4>
+      <p>
+        Below is a demo of an element 6 columns wide that has been cetrally
+        positioned.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="row demo">
+    <div class="col__3-12">
+      <div class="block"><div class="col_class">.col__3-12</div></div>
+    </div>
+    <div class="col__3-12">
+      <div class="block"><div class="col_class">.col__3-12</div></div>
+    </div>
+    <div class="col__3-12">
+      <div class="block"><div class="col_class">.col__3-12</div></div>
+    </div>
+    <div class="col__3-12">
+      <div class="block"><div class="col_class">.col__3-12</div></div>
+    </div>
+  </div>
+
+  <div class="row demo">
+    <div class="col__6-12__center">
+      <div class="block"><div class="col_class">.col__3-12__center</div></div>
+    </div>
+  </div>
+
+  <div class="row demo">
+    <div class="col__3-12">
+      <div class="block"><div class="col_class">.col__3-12</div></div>
+    </div>
+    <div class="col__3-12">
+      <div class="block"><div class="col_class">.col__3-12</div></div>
+    </div>
+    <div class="col__3-12">
+      <div class="block"><div class="col_class">.col__3-12</div></div>
+    </div>
+    <div class="col__3-12">
+      <div class="block"><div class="col_class">.col__3-12</div></div>
     </div>
   </div>
 
