@@ -27,11 +27,14 @@ h4 {
   margin: 18px 0 6px;
 }
 
+a {
+  color: #fc2b60;
+}
+
 .btn {
-  background-color: #fc2b60;
   color: white;
   padding: .6em .8em;
-  border-radius: .16em;
+  border-radius: .2em;
   box-sizing: border-box;
   display: inline-block;
   text-decoration: none;
@@ -40,7 +43,27 @@ h4 {
 }
 
 .btn-lg {
-  font-size: 1.3em;
+  font-size: 1em;
+}
+
+.btn-primary {
+  background-color: #fc2b60;
+  border: 1px solid #fc2b60;
+}
+
+.btn-primary:hover {
+  background-color: #ed1656;
+  border: 1px solid #ed1656;
+}
+
+.btn-secondary {
+  border: 1px solid #fc2b60;
+  color: #fc2b60;
+}
+
+.btn-secondary:hover {
+  border: 1px solid #ed1656;
+  color: #ed1656;
 }
 
 code, pre {
