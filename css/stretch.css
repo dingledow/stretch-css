@@ -11,7 +11,6 @@ body {
 .row {
   margin-left: -10px;
   margin-right: -10px;
-  margin-bottom: 20px;
 }
 .row:before, .row:after {
   content: " ";
@@ -29,6 +28,7 @@ body {
   box-sizing: border-box;
   float: left;
   white-space: normal;
+  margin-bottom: 20px;
 }
 
 @media (min-width: 769px) {

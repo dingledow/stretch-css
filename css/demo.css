@@ -183,4 +183,35 @@ pre {
   color: #99b9dd;
 }
 
+@media screen and (min-width: 769px) {
+  .col_class.lg {
+    display: block;
+  }
+
+  .col_class.sm,
+  .col_class.md {
+    display: none;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 769px) {
+  .col_class.md {
+    display: block;
+  }
+
+  .col_class.sm,
+  .col_class.lg {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  .col_class.sm {
+    display: block;
+  }
+
+  .col_class.lg,
+  .col_class.md {
+    display: none;
+  }
+}
+
 /*# sourceMappingURL=demo.css.map */

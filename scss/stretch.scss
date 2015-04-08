@@ -1,6 +1,6 @@
 $wrap: 960px;
 $gutter: 20px;
-$row-spacing: 20px;
+$vertical-spacing: 20px;
 $md-breakpoint: 768px;
 $sm-breakpoint: 480px;
 
@@ -29,7 +29,6 @@ body{
   margin-left:  ($gutter / -2);
   margin-right: ($gutter / -2);
   @include clearfix;
-  margin-bottom: $row-spacing;
 }
 
 *[class*='col__'] {
@@ -40,6 +39,7 @@ body{
   box-sizing: border-box;
   float: left;
   white-space: normal;
+  margin-bottom: $vertical-spacing;
 }
 
 @mixin make-grid-column-all-devices {

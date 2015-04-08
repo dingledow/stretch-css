@@ -72,6 +72,8 @@
       <p>
         The easiest way to install Stretch is using bower:<br /><code>bower install stretch</code>
       </p>
+      <p>If you're not using Bower, just download the <code>.scss</code> from
+        GitHub or download the plain vanilla <code>.css</code> above.
     </div>
   </div>
 
@@ -86,13 +88,13 @@
         <ul class="getting_started__variable_list">
           <li><code>$wrap: 960px;</code></li>
           <li><code>$gutter: 20px;</code></li>
-          <li><code>$row-spacing: 20px;</code></li>
+          <li><code>$vertical-spacing: 20px;</code></li>
           <li><code>$md-breakpoint: 768px;</code></li>
           <li><code>$sm-breakpoint: 480px;</code></li>
         </ul>
       </p>
       <h3>Prepare Your Grid</h3>
-      <h4>Wrap Your Content</h4>
+      <h4>Create a Wrapper</h4>
       <p>
         Start by setting a <code>wrap</code> class on the element that will
         contain all the rows of content. The width for this is set in the
@@ -108,8 +110,8 @@
         to the element that will contain the columns for that row.
       </p>
       <p>
-        You can specify the vertical spacing between rows by setting the
-        <code>$row-spacing</code> variable to what you prefer.
+        You can specify the vertical spacing between columns by setting the
+        <code>$vertical-spacing</code> variable to what you prefer.
       </p>
       <h4>Define the Gutter</h4>
       <p>
@@ -347,8 +349,91 @@
     <div id="responsive_columns" class="col__lg-6-12__center col__12-12">
       <h4>Responsive Columns</h4>
       <p>
-        alskdj
+        To create responsive columns, first, ensure that the breakpoint variables
+        in the Sass file are set to your preferred sizes.
       </p>
+      <p>
+        First, add the simple column class <code>col__x-12</code> to your columns. This needs to be set and
+        will apply as a default for all screen sizes.
+      </p>
+      <p>
+        Making columns respond is as easy as adding the following classes where necessary:<br />
+      </p>
+      <p>
+        <code>col__md-x-12</code> for medium sized screens and tablets<br />
+        <code>col__sm-x-12</code> for mobile devices.
+      </p>
+      <p>
+        The respsonsive <code>sm</code> and <code>md</code> classes can be applied as and
+        when they are required — the simple column class <code>col__x-12</code> will
+        always work when respsonsive classes aren't specified. This reduces
+        the amount of text in your HTML structure, but gives you the flexibility
+        to be as verbose as you wish.
+      </p>
+
+      <h4>Responsive Columns Demo</h4>
+      <p>
+        This demo shows how different responsive classes work for different screen sizes.
+        The HTML structure to create this is shown below. You'll notice that the
+        last two columns don't have an <code>sm</code> class specified. This shows
+        how the simple column class works when a responsive class isn't specified.
+      </p>
+      <pre>
+&lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;wrap&quot;&gt;
+  &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;row&quot;&gt;
+
+    &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;col__4-12 col__md-6-12 col__sm-12-12&quot;&gt;&lt;/<span class="div-highlight">div</span>&gt;
+
+    &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;col__4-12 col__md-6-12 col__sm-12-12&quot;&gt;&lt;/<span class="div-highlight">div</span>&gt;
+
+    &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;col__4-12 col__md-12-12 col__sm-12-12&quot;&gt;&lt;/<span class="div-highlight">div</span>&gt;
+
+    &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;col__6-12 col__md-12-12&quot;&gt;&lt;/<span class="div-highlight">div</span>&gt;
+
+    &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;col__6-12 col__md-12-12&quot;&gt;&lt;/<span class="div-highlight">div</span>&gt;
+
+  &lt;/<span class="div-highlight">div</span>&gt;
+&lt;/<span class="div-highlight">div</span>&gt;</pre>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="row demo">
+    <div class="col__4-12 col__md-6-12 col__sm-12-12">
+      <div class="block">
+        <div class="col_class lg">.col__4-12</div>
+        <div class="col_class md">.col__md-6-12</div>
+        <div class="col_class sm">.col__sm-12-12</div>
+      </div>
+    </div>
+    <div class="col__4-12 col__md-6-12 col__sm-12-12">
+      <div class="block">
+        <div class="col_class lg">.col__4-12</div>
+        <div class="col_class md">.col__md-6-12</div>
+        <div class="col_class sm">.col__sm-12-12</div>
+      </div>
+    </div>
+    <div class="col__4-12 col__md-12-12 col__sm-12-12">
+      <div class="block">
+        <div class="col_class lg">.col__4-12</div>
+        <div class="col_class md">.col__md-12-12</div>
+        <div class="col_class sm">.col__sm-12-12</div>
+      </div>
+    </div>
+    <div class="col__6-12 col__md-12-12">
+      <div class="block">
+        <div class="col_class lg">.col__6-12</div>
+        <div class="col_class md">.col__md-12-12</div>
+        <div class="col_class sm">.col__6-12</div>
+      </div>
+    </div>
+    <div class="col__6-12 col__md-12-12">
+      <div class="block">
+        <div class="col_class lg">.col__6-12</div>
+        <div class="col_class md">.col__md-12-12</div>
+        <div class="col_class sm">.col__6-12</div>
+      </div>
     </div>
   </div>
 </div>
