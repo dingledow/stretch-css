@@ -12,8 +12,8 @@
 }
 body {
   font-family: "Apercu",sans-serif;
-  background-color: #f4f6fb;
-  color: #162673;
+  background-color: white;
+  color: #525151;
   line-height: 21px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -69,16 +69,17 @@ a {
 code, pre {
   font-family: "apercumono", monospace;
   padding: 0px 3px;
-  background-color: #dbe4f4;
+  background-color: #f6f8fb;
   border-radius: 3px;
-  border: 1px solid #a4b8da;
+  border: 1px solid #c7d4e9;
   box-sizing: border-box;
   font-size: 14px;
 }
 
 pre {
-  white-space: pre-wrap;
+  white-space: pre;
   padding: 9px 12px;
+  overflow-x: scroll;
 }
 
 .title {
