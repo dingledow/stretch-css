@@ -1,5 +1,5 @@
-$wrap: 960px;
-$gutter: 20px;
+$wrap: 980px;
+$gutter: 30px;
 $row-spacing: 20px;
 $md-breakpoint: 768px;
 $sm-breakpoint: 480px;
@@ -7,8 +7,8 @@ $sm-breakpoint: 480px;
 @mixin clearfix() {
   &:before,
   &:after {
-    content: " "; // 1
-    display: table; // 2
+    content: " ";
+    display: table;
   }
   &:after {
     clear: both;
@@ -38,120 +38,91 @@ body{
   padding-left:  ($gutter / 2);
   padding-right: ($gutter / 2);
   box-sizing: border-box;
-  float: left;
+  //float: left;
   white-space: normal;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: -4px;
 }
 
 @mixin make-grid-column-all-devices {
-  @for $i from 1 through 12 {
-    *[class*='col__#{$i}-12']{
+  @for $i from 0 through 12 {
+    .col__#{$i}-12{
       width: percentage($i/12);
     }
-    *[class*='col__push-#{$i}-12']{
+    .col__#{$i}-12__center{
+      width: percentage($i/12);
+      margin-left: percentage((1-($i/12))/2);
+      display: block;
+    }
+    .offset__#{$i}-12{
       margin-left: percentage($i/12);
     }
-    *[class*='col__pull-#{$i}-12']{
-      margin-left: -(percentage($i/12));
-    }
-  }
-  @include make-grid-column-center;
-}
-
-@mixin make-grid-column-center {
-  *[class*='__center']{
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    float: initial;
   }
 }
 
 @media (min-width: $md-breakpoint + 1px){
   @include make-grid-column-all-devices;
-  @for $i from 1 through 12 {
-    *[class*='lg-#{$i}-12']{
+  @for $i from 0 through 12 {
+    .col__lg-#{$i}-12{
       width: percentage($i/12);
+      margin-left: 0;
     }
-    *[class*='lg-push-#{$i}-12']{
-      margin-left: percentage($i/12);
+    .col__lg-#{$i}-12__center{
+      width: percentage($i/12);
+      margin-left: percentage((1-($i/12))/2);
+      display: block;
     }
-    *[class*='lg-pull-#{$i}-12']{
-      margin-left: -(percentage($i/12));
+    .offset__lg-#{$i}-12{
+      margin-left: percentage($i/12) !important;
     }
   }
-  @include make-grid-column-center;
+  .hidden__lg{
+    display: none;
+  }
+
 }
 
 @media (max-width: $md-breakpoint) and (min-width: $sm-breakpoint + 1px){
   @include make-grid-column-all-devices;
-  @for $i from 1 through 12 {
-    *[class*='md-#{$i}-12']{
+  @for $i from 0 through 12 {
+    .col__md-#{$i}-12{
       width: percentage($i/12);
+      margin-left: 0;
     }
-    *[class*='md-push-#{$i}-12']{
-      margin-left: percentage($i/12);
+    .col__md-#{$i}-12__center{
+      width: percentage($i/12);
+      margin-left: percentage((1-($i/12))/2);
+      display: block;
     }
-    *[class*='md-pull-#{$i}-12']{
-      margin-left: -(percentage($i/12));
+    .offset__md-#{$i}-12{
+      margin-left: percentage($i/12) !important;
     }
   }
-  @include make-grid-column-center;
+  .hidden__md{
+    display: none;
+  }
+
 }
 
 @media (max-width: $sm-breakpoint){
   @include make-grid-column-all-devices;
-  @for $i from 1 through 12 {
-    *[class*='sm-#{$i}-12']{
+  @for $i from 0 through 12 {
+    .col__sm-#{$i}-12{
       width: percentage($i/12);
+      margin-left: 0;
     }
-    *[class*='sm-push-#{$i}-12']{
-      margin-left: percentage($i/12);
+    .col__sm-#{$i}-12__center{
+      width: percentage($i/12);
+      margin-left: percentage((1-($i/12))/2);
+      display: block;
     }
-    *[class*='sm-pull-#{$i}-12']{
-      margin-left: -(percentage($i/12));
+    .offset__sm-#{$i}-12{
+      margin-left: percentage($i/12) !important;
     }
   }
-  @include make-grid-column-center;
+  .hidden__sm{
+    display: none;
+  }
+
 }
-
-// .col__top {
-//   vertical-align: top;
-// }
-// .col__middle {
-//   vertical-align: middle;
-// }
-// .col__bottom {
-//   vertical-align: bottom;
-// }
-//
-// .row-full-height {
-//   height: 100%;
-// }
-//
-// .col__full-height {
-//   height: 100%;
-//   vertical-align: middle;
-// }
-// .row-same-height {
-//   display: table;
-//   width: 100%;
-//   /* fix overflow */
-//   table-layout: fixed;
-// }
-// .col__xs-height {
-//   display: table-cell;
-//   float: none !important;
-// }
-
-// @media (min-width: $sm-breakpoint) {
-//   .col__sm-height {
-//     display: table-cell;
-//     float: none !important;
-//   }
-// }
-// @media (min-width: $md-breakpoint) {
-//   .col__md-height {
-//     display: table-cell;
-//     float: none !important;
-//   }
-// }
