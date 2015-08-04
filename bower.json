@@ -1,5 +1,5 @@
 {
-  "name": "stretch.css",
+  "name": "stretch-css",
   "version": "1.0.0",
   "main": [
     "scss/stretch.scss"
