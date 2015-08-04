@@ -1,0 +1,27 @@
+{
+  "name": "stretch.css",
+  "version": "1.0.0",
+  "main": [
+    "scss/stretch.scss"
+  ],
+  "keywords": [
+    "stretch",
+    "stretch.css",
+    "sass",
+    "grid",
+    "css"
+  ],
+  "ignore": [
+    "scss/demo.scss",
+    "css",
+    "index.html",
+    "*.md",
+    ".*",
+    "package.json",
+    "Gruntfile.js"
+  ],
+  "authors": [
+    "David Ingledow"
+  ],
+  "license": "MIT"
+}
