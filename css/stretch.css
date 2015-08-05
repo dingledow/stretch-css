@@ -13,7 +13,7 @@ body {
   margin-right: -15px;
 }
 .row:before, .row:after {
-  content: " ";
+  content: "";
   display: table;
 }
 .row:after {
