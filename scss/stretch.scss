@@ -23,6 +23,7 @@ body{
   padding: 0 ($gutter / 2);
   margin: 0 auto;
   max-width: $wrap;
+  box-sizing: border-box;
 }
 
 .row{
