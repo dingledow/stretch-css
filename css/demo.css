@@ -3,15 +3,10 @@
   These styles are just for the demo.
 
   =========================================================================*/
-@font-face {
-  font-family: 'apercumono';
-  src: url("../fonts/apercu-mono/Apercu-Mono-webfont.eot");
-  src: url("../fonts/apercu-mono/Apercu-Mono-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/apercu-mono/Apercu-Mono-webfont.woff2") format("woff2"), url("../fonts/apercu-mono/Apercu-Mono-webfont.woff") format("woff"), url("../fonts/apercu-mono/Apercu-Mono-webfont.ttf") format("truetype"), url("../fonts/apercu-mono/Apercu-Mono-webfont.svg#apercumono") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
 body {
-  font-family: "Apercu",sans-serif;
+  font-family: "franklin-gothic-urw", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.63em;
   background-color: white;
   color: #525151;
   line-height: 21px;
@@ -80,6 +75,12 @@ pre {
   white-space: pre;
   padding: 9px 12px;
   overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.wrap.demo {
+  margin-top: 18px;
+  margin-bottom: 30px;
 }
 
 .title {

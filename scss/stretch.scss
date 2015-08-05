@@ -7,7 +7,7 @@ $sm-breakpoint: 480px;
 @mixin clearfix() {
   &:before,
   &:after {
-    content: " ";
+    content: "";
     display: table;
   }
   &:after {
@@ -37,7 +37,6 @@ body{
   padding-left:  ($gutter / 2);
   padding-right: ($gutter / 2);
   box-sizing: border-box;
-  //float: left;
   white-space: normal;
   display: inline-block;
   vertical-align: top;
