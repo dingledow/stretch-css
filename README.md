@@ -4,6 +4,10 @@ Stretch is a super simple responsive CSS grid system. For now, it is a 12 column
 
 I hope people find this helpful.
 
+## Install
+
+```bower install stretch-css```
+
 ## Getting Started
 
 Stretch can be implemented in two ways:
