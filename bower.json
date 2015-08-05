@@ -13,9 +13,7 @@
   ],
   "ignore": [
     "scss/demo.scss",
-    "css/demo.css",
-    "css/demo.css.map",
-    "css/stretch.css.map",
+    "css",
     "index.html",
     "*.md",
     ".*",

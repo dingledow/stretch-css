@@ -52,7 +52,7 @@
       <p>
         Stretch is a 12 column grid that can have any gutter size you want.
         Columns can be offset and centred to make manoeuvring content really
-        easy. Two breakpoint sizes can be specified.
+        easy. Columns can be specified differently for three devices sizes.
       </p>
       <p>
         1 Sass file. 5 variables. Lots of win.
@@ -64,7 +64,7 @@
     <div class="col__6-12__center download__about">
       <a class="btn btn-lg btn-primary" href="https://github.com/dingledow/Stretch">View on GitHub</a>
       <a class="btn btn-lg btn-secondary" href="https://raw.githubusercontent.com/dingledow/Stretch/master/css/stretch.css" download="Download Quickstart CSS">Download Quickstart CSS</a>
-      <p class="version">v1.0.2</p>
+      <p class="version">v1.0.3</p>
     </div>
   </div>
 
@@ -72,9 +72,13 @@
     <div class="col__lg-6-12__center col__12-12">
       <h2>Installation</h2>
       <p>
-        The easiest way to install Stretch is using bower:<br /><code>bower install stretch-css</code>
+        The easiest way to install Stretch CSS is using bower:<br /><code>bower install stretch-css</code>
       </p>
-      <p>If you're not using Bower, just download the <code>.scss</code> from
+      <p>
+        Compile the Sass file with Grunt or Gulp.
+      </p>
+      <p>
+        If you're not using Bower, just download the <code>.scss</code> from
         GitHub or download the plain vanilla <code>.css</code> above.
     </div>
   </div>
@@ -85,7 +89,7 @@
       <h3>Sass Variables</h3>
       <p>
         The best way to use stretch is to include the <code>stretch.scss</code>
-        file in your Sass build. In this file, set the following variables to
+        file in your Sass build. You can set the following variables to
         whatever you want. These are the default values:
         <ul class="getting_started__variable_list">
           <li><code>$wrap: 960px;</code></li>
@@ -397,9 +401,85 @@
 
 <div class="wrap">
   <div class="row">
-    <div class="col__6-12__center download__about">
+    <div id="offsetting_columns" class="col__lg-6-12__center col__12-12">
+      <h4>Offsetting Columns</h4>
+      <p>
+        Columns can be offset to create the blank areas of space in your layout.
+      </p>
+      <p>
+        To offset a column, just add the class <code>offset__x-12</code> to your column, where <code>x</code> is the number of columns you want to offset.
+      </p>
+      <p>
+        Responsive columns can be offset:<br />
+      </p>
+      <p>
+        <code>offset__lg-x-12</code> for large screens and desktops<br />
+        <code>offset__md-x-12</code> for medium sized screens and tablets<br />
+        <code>offset__sm-x-12</code> for mobile devices.
+      </p>
+
+      <h4>Offsetting Columns Demo</h4>
+      <pre>
+&lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;wrap&quot;&gt;
+  &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;row&quot;&gt;
+    &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;col__4-12&quot;&gt;&lt;/<span class="div-highlight">div</span>&gt;
+    &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;col__4-12 offset__4-12&quot;&gt;&lt;/<span class="div-highlight">div</span>&gt;
+    &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;col__6-12&quot;&gt;&lt;/<span class="div-highlight">div</span>&gt;
+    &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;col__3-12 offset__3-12&quot;&gt;&lt;/<span class="div-highlight">div</span>&gt;
+    &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;col__3-12&quot;&gt;&lt;/<span class="div-highlight">div</span>&gt;
+    &lt;<span class="div-highlight">div</span> <span class="class-highlight">class</span>=&quot;col__7-12 offset__2-12&quot;&gt;&lt;/<span class="div-highlight">div</span>&gt;
+  &lt;/<span class="div-highlight">div</span>&gt;
+&lt;/<span class="div-highlight">div</span>&gt;</pre>
+    </div>
+  </div>
+</div>
+
+<div class="wrap demo">
+  <div class="row demo">
+    <div class="col__4-12">
+      <div class="block"><div class="col_class">.col__4-12</div></div>
+    </div>
+    <div class="col__4-12 offset__4-12">
+      <div class="block"><div class="col_class">.col__4-12.offset__4-12</div></div>
+    </div>
+  </div>
+
+  <div class="row demo">
+    <div class="col__6-12">
+      <div class="block"><div class="col_class">.col__6-12</div></div>
+    </div>
+    <div class="col__3-12 offset__3-12">
+      <div class="block"><div class="col_class">.col__3-12.offset__3-12</div></div>
+    </div>
+  </div>
+
+  <div class="row demo">
+    <div class="col__3-12">
+      <div class="block"><div class="col_class">.col__3-12</div></div>
+    </div>
+    <div class="col__7-12 offset__2-12">
+      <div class="block"><div class="col_class">.col__7-12.offset__2-12</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="row">
+    <div class="col__6-12__center download__about__footer">
       <a class="btn btn-lg btn-primary" href="https://github.com/dingledow/Stretch">View on GitHub</a>
       <a class="btn btn-lg btn-secondary" href="https://raw.githubusercontent.com/dingledow/Stretch/master/css/stretch.css" download="Download Quickstart CSS">Download Quickstart CSS</a>
+      <div class="btn-share--twitter__footer">
+        <a
+          href="https://twitter.com/share"
+          class="twitter-share-button"
+          data-via="dingledow">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      </div>
+      <div class="footer">
+        <div class="footer--cp">A super simple responsive CSS grid framework by</div>
+        <div class="author"><a href="http://david.ingledow.co.uk/" target="_blank">David Ingledow</a></div>
+        <div class="footer--cp--oliver">Thanks to <a href="http://oliver-perry.com/" target="_blank">Oliver Perry</a> for helping me pick the name 'Stretch CSS'!</div>
+      </div>
     </div>
   </div>
 </div>
