@@ -1,6 +1,6 @@
 {
   "name": "stretch-css",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "main": [
     "scss/stretch.scss"
   ],
@@ -13,9 +13,7 @@
   ],
   "ignore": [
     "scss/demo.scss",
-    "css/demo.css",
-    "css/demo.css.map",
-    "css/stretch.css.map",
+    "css",
     "index.html",
     "*.md",
     ".*",

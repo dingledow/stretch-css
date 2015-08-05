@@ -118,6 +118,10 @@ pre{
   }
 }
 
+.btn-share--twitter__footer{
+  margin-top: 18px;
+}
+
 .download__about{
   text-align: center;
   margin: 20px auto;
@@ -128,6 +132,14 @@ pre{
     margin: 0;
     color: #8c9bc8;
     font-size: .85em;
+  }
+}
+
+.download__about__footer{
+  text-align: center;
+  margin: 80px auto 130px;
+  .btn{
+    margin: 0 auto 12px;
   }
 }
 
@@ -186,6 +198,27 @@ pre{
 
 .comment-highlight{
   color: #99b9dd;
+}
+
+.footer{
+  margin-top: 90px;
+  .footer--cp{
+    margin: 12px 0 6px;
+    display: block;
+    color: #808080;
+  }
+  .author{
+    margin: 6px 0;
+    display: block;
+  }
+  .footer--cp--oliver{
+    margin: 42px 0 0;
+    display: block;
+    color: #808080;
+    a{
+      color: #f59ab5;
+    }
+  }
 }
 
 @media screen and (min-width: 769px){
